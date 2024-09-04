@@ -1,0 +1,14 @@
+{
+  "name": "cypress-nopcommerce",
+  "version": "1.0.0",
+  "description": "Projeto de Testes Automatizados em Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open"
+  },
+  "author": "Cleberson Osorio",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.14.1"
+  }
+}
