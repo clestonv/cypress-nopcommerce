@@ -72,6 +72,7 @@ Cypress.Commands.add('generateUser', () => {
     const user = {
         username: faker.person.firstName(),
         lastname: faker.person.lastName(),
+        fullname: faker.person.fullName(),
         email: faker.internet.email(),
         password: faker.internet.password(),
         birthday: dia.toString(),
