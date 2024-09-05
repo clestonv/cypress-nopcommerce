@@ -1,0 +1,7 @@
+{
+    "firstNameError": "span[data-valmsg-for='FirstName']",
+    "lastNameError": "span[data-valmsg-for='LastName']",
+    "emailError": "span[data-valmsg-for='Email']",
+    "confirmPasswordError": "span[data-valmsg-for='ConfirmPassword']"
+  }
+  

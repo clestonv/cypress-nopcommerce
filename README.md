@@ -32,10 +32,10 @@
 ## 🎮 Como clonar o projeto e Executar os testes
 ```
 1. Clonando o repositório 
-$ git clone https://github.com/clestonv/s_dg.git
+$ git clone git@github.com:clestonv/cypress-nopcommerce.git
 
 2. Acessando o diretório do projeto 
-$ cd s_dg
+$ cd cypress-nopcommerce
 
 3. Instalando as dependências 
 $ npm -i

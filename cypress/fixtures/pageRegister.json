@@ -1,0 +1,15 @@
+{
+  "genderMale": "#gender-male",
+  "genderFemale": "#gender-female",
+  "firstName": "#FirstName",
+  "lastName": "#LastName",
+  "dateOfBirthDay": "select[name='DateOfBirthDay']",
+  "dateOfBirthMonth": "select[name='DateOfBirthMonth']",
+  "dateOfBirthYear": "select[name='DateOfBirthYear']",
+  "email": "#Email",
+  "companyName": "#Company",
+  "newsletter": "#Newsletter",
+  "password": "#Password",
+  "confirmPassword": "#ConfirmPassword",
+  "registerButton": "#register-button"
+}
