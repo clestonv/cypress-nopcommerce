@@ -1,6 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const register = require('../fixtures/pageRegister.json');
-const user = require('../fixtures/user.json');
+
+import './api/user.js';
 
 Cypress.Commands.add('registerUser', ({firstName, lastName, day, month, year, email, company, password})=> {
     
@@ -14,41 +15,40 @@ Cypress.Commands.add('registerUser', ({firstName, lastName, day, month, year, em
     const randomGenderId = getRandomGenderId();
 
     cy.get(randomGenderId).click(); // Clica no botão de gênero aleatorio
-    
-    if(firstName == user.username){
-        cy.get(register.firstName).type(firstName); // Preenche o campo do primeiro nome
-    }
-    if(lastName == user.lastname){
-        cy.get(register.lastName).type(lastName); // Preenche o campo do último nome
-    }
-    
-    cy.get(register.dateOfBirthDay).select(day); // Seleciona o dia de nascimento
-    cy.get(register.dateOfBirthMonth).select(month); // Seleciona o mês de nascimento
-    cy.get(register.dateOfBirthYear).select(year); // Seleciona o ano de nascimento
-    
-    cy.get(`${register.dateOfBirthDay} option:selected`).should('have.text', day) // Seleciona o dia de nascimento
-    cy.get(`${register.dateOfBirthMonth} option:selected`).should('have.text', month) // Seleciona o mês de nascimento
-    cy.get(`${register.dateOfBirthYear} option:selected`).should('have.text', year) // Seleciona o ano de nascimento
 
-    if(email == user.email){
-        cy.get(register.email).type(email); // Preenche o campo de email
-    }
+    cy.fixture('user').then((user) => {
+        if(firstName == user.username){
+            cy.get(register.firstName).type(firstName); // Preenche o campo do primeiro nome
+        }
+        if(lastName == user.lastname){
+            cy.get(register.lastName).type(lastName); // Preenche o campo do último nome
+        }
+        
+        cy.get(register.dateOfBirthDay).select(day); // Seleciona o dia de nascimento
+        cy.get(register.dateOfBirthMonth).select(month); // Seleciona o mês de nascimento
+        cy.get(register.dateOfBirthYear).select(year); // Seleciona o ano de nascimento
+        
+        cy.get(`${register.dateOfBirthDay} option:selected`).should('have.text', day) // Seleciona o dia de nascimento
+        cy.get(`${register.dateOfBirthMonth} option:selected`).should('have.text', month) // Seleciona o mês de nascimento
+        cy.get(`${register.dateOfBirthYear} option:selected`).should('have.text', year) // Seleciona o ano de nascimento
     
-    cy.get(register.companyName).type(company); // Preenche o campo de nome da empresa
+        if(email == user.email){
+            cy.get(register.email).type(email); // Preenche o campo de email
+        }
+        
+        cy.get(register.companyName).type(company); // Preenche o campo de nome da empresa
+        
+        cy.get(register.newsletter).check();
+        
+        if(password == user.password ){
+            cy.get(register.password).type( password,{log: false});
+        }
+        if(password == user.password){
+            cy.get(register.confirmPassword).type( password, {log: false});
+        }
+    })
     
-    cy.get(register.newsletter).check();
-    
-    if(password == user.password ){
-        cy.get(register.password).type( password,{log: false});
-    }
-    if(password == user.password){
-        cy.get(register.confirmPassword).type( password, {log: false});
-
-    }
-    
-
     cy.get(register.registerButton).click()
-    
 });
 
 Cypress.Commands.add('generateUser', () => {

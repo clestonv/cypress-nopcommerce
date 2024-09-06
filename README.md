@@ -1,15 +1,31 @@
 <h1 align="center">
-    <img src="cypress/img/duckgo.png">
+    <img src="cypress/img/demo.nopcommerce.com.png">
 </h1>
-<h1 align="center">
-    <img src="cypress/img/Busca.feature.gif">
-</h1>
+
 
 ## 📋 Sobre
 
 **Testes de Front-End** no site [nopcommerce](https://demo.nopcommerce.com/)
+### ✅ Fazer um registro com sucesso
+<h1 align="center">
+    <img src="cypress/img/registerSuscess.cy.js.gif">
+</h1>
 
-**Testes de API** no projeto [ServRes](https://serverest.dev/)
+### ✅ Validar mensagem de erro durante o registro
+<h1 align="center">
+    <img src="cypress/img/fieldsRequired.cy.js.gif">
+</h1>
+
+
+**Testes de API** no projeto [ServResT](https://serverest.dev/)
+
+### ✅ POST /Usuario 
+### ✅ PUT /Usuario
+### ✅ GET /Usuario
+### ✅ DELETE /Usuario
+<h1 align="center">
+    <img src="cypress/img/user.cy.js.gif">
+</h1>
 
 ## 🚀 Tecnologias
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)

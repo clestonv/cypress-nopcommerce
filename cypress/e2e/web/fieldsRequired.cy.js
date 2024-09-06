@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 
-
 describe('Campos Obrigatorios', () => {
     const message = require('../../fixtures/messageValidate.json');
     const error = require('../../fixtures/selectorErrors.json');
